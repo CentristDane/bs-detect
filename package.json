@@ -1,0 +1,25 @@
+{
+  "name": "bs-detect",
+  "version": "1.0.0",
+  "description": "Find fake news",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CentristDane/bs-detect.git"
+  },
+  "author": "Dane",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CentristDane/bs-detect/issues"
+  },
+  "homepage": "https://github.com/CentristDane/bs-detect#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
+    "path": "^0.12.7"
+  }
+}
