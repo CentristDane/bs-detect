@@ -29,14 +29,17 @@
 
 
 ////////////TEST TEST TEST ////////////
-    FB.login(function(response) {
+  function work (){
+  FB.login(function(response) {
        if (response.status === 'connected') {
     console.log(response.authResponse.accessToken);
   } else {
     console.log("noting");
     // The person is not logged into this app or we are unable to tell. 
   }
-    }, { scope: 'public_profile,email,user_friends,user_likes' });
+    }, { scope: 'public_profile,email,user_friends,user_likes' })};
+
+  work();
 
 ///////////////////////////////////////////
    
