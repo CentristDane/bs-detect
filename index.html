@@ -59,7 +59,7 @@
   // });
   FB.getLoginStatus(function(response){if(response.status === 'connected') { 
     statusChangeCallback(response);
-    var perms = new List<string>(){"public_profile", "email", "user_friends"};
+    var perms = new List test(){"public_profile", "email", "user_friends"};
 FB.LogInWithReadPermissions(perms, AuthCallback);
 
 private void AuthCallback (ILoginResult result) {
