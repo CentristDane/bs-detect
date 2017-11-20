@@ -25,24 +25,10 @@
                 'into this app.';
         }
     }
-  
 
 
-////////////TEST TEST TEST ////////////
-  function work (){
-  FB.login(function(response) {
-       if (response.status === 'connected') {
-    console.log(response.authResponse.accessToken);
-  } else {
-    console.log("noting");
-    // The person is not logged into this app or we are unable to tell. 
-  }
-    }, { scope: 'public_profile,email,user_friends,user_likes' })};
 
-  work();
 
-///////////////////////////////////////////
-   
 
 
 
@@ -108,14 +94,29 @@
                 'Thanks for logging in, ' + response.name + '!';
         });
     }
+    ////////////TEST TEST TEST ////////////
+    function work() {
+        FB.login(function(response) {
+            if (response.status === 'connected') {
+                console.log(response.authResponse.accessToken);
+            } else {
+                console.log("noting");
+                // The person is not logged into this app or we are unable to tell. 
+            }
+        }, { scope: 'public_profile,email,user_friends,user_likes' })
+    };
+
+
+    ///////////////////////////////////////////
     </script>
     <!--
   Below we include the Login Button social plugin. This button uses
   the JavaScript SDK to present a graphical Login button that triggers
   the FB.login() function when clicked.
 -->
-    <fb:login-button scope="public_profile,email,user_friends,user_likes" onlogin="checkLoginState();">
+    <fb:login-button scope="public_profile,email,user_friends,user_likes" onlogin="work();">
     </fb:login-button>
+    <!-- checkLoginState(); -->
     <div id="status">
     </div>
     <h1>TESTTTTTTTT</h1>
