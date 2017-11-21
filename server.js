@@ -3,6 +3,9 @@
 var express = require("express");
 var bodyParser = require("body-parser");
 var path = require("path");
+var Twit = require('twitter');
+var T = new Twit(config);
+var config = require('./config.js');
 // Sets up the Express App
 // =============================================================
 var app = express();
@@ -15,30 +18,7 @@ app.use(bodyParser.json());
 app.get("/", function(req, res) {
   res.sendFile(path.join(__dirname, "home.html"));
 });
-// // Search for Specific Character (or all characters) - provides JSON
-// app.get("/api/reservationInfo", function(req, res) {
-//   return res.json(reservationInfo)
-// });
-// app.get("/api/waitingList", function(req, res) {
-//   return res.json(waitingList)
-// });
-// ////post function
-// app.post("/api/new", function(req, res) {
-//   // req.body hosts is equal to the JSON post sent from the user
-//   // This works because of our body-parser middleware
-//   var newReservation = req.body;
-//   console.log(newReservation);
-//   res.json(newReservation);
-//   if (reservationInfo.length <= 4) {
-//      reservationInfo.push(newReservation);
-//   } else {
-//      waitingList.push(newReservation);
-//   }
-//   console.log(waitingList);
-//   console.log(reservationInfo);
-// });
-// Starts the server to begin listening
-// =============================================================
+
 app.listen(PORT, function() {
   console.log("App listening on PORT " + PORT);
 });
