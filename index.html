@@ -114,7 +114,7 @@
                     for (var i = 1; i < response.data.length; i++) {
                         if (response.data[i] = "undefined"){
                           console.log("not a user");
-                        }else{
+                        }else if (response.data[i]){
                         for (var j = 0; j < response.data[i].likes.data.length; j++) {
                             console.log(response.data[i].likes.data[j]);
                         }
