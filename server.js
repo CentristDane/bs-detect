@@ -3,6 +3,9 @@
 var express = require("express");
 var bodyParser = require("body-parser");
 var path = require("path");
+var Twit = require('twitter');
+var T = new Twit(config);
+
 
 // Sets up the Express App
 // =============================================================
@@ -21,7 +24,50 @@ app.get("/", function(req, res) {
   res.sendFile(path.join(__dirname, "index.html"));
 });
 
+app.post('/twitterOutput', function(req, res){
 
+  userInput = req.body.userInput;
+
+             if(userInput != null || userInput != ""){
+                var params = {
+                  q: userInput,
+                  count: 20, // displays 20 tweets
+                  result_type: 'recent'
+                };
+
+               T.get('search/tweets', params, gotData);
+               function gotData(err, data, response) {
+                 var tweets = data.statuses;
+
+                 if(tweets != null){
+                 res.writeHead(200, {'content-type':'text/html; charset=utf-8'});
+
+                 for (var i = 0; i < tweets.length; i++) {
+                   var tweetholder=[];
+                   var user_name = tweets[i].user.name;
+                   var s_name = tweets[i].user.screen_name;
+                   var p_image = tweets[i].user.profile_image_url_https;
+                   var t_message = tweets[i].text;
+                    var location = tweets[i].user.location;
+                  //   tweets[i]=$("#tweetholder");
+                  // tweets[i].text("Results")
+
+                   res.write('<br>');
+                   res.write('<img src='+p_image+'>');
+                   res.write('<br>');
+                   res.write('<b>'+'Name: '+'</b>' + user_name + '<br>');
+                   res.write('<b>'+'Screen Name: '+'</b>'  +'<a href="https://twitter.com/'+s_name+'">'+'@'+s_name+'</a>'+'<br>');
+                   res.write('<b>'+'Message: '+'</b>' + t_message  + '<br>');
+                   res.write('<b>'+'Location: '+'</b>' + location  + '<br>');
+                   res.write('<br>');
+                 }
+                 res.end();
+               }
+               }
+             }
+
+  //console.log(userInput);
+});
 
 
 
