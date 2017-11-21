@@ -13,7 +13,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 // Basic route that sends the user first to the AJAX Page
 app.get("/", function(req, res) {
-  res.sendFile(path.join(__dirname, "index.html"));
+  res.sendFile(path.join(__dirname, "home.html"));
 });
 // // Search for Specific Character (or all characters) - provides JSON
 // app.get("/api/reservationInfo", function(req, res) {
