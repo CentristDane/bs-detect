@@ -112,11 +112,13 @@
                     method: "GET"
                 }).done(function(response) {
                     for (var i = 1; i < response.data.length; i++) {
-                        if (response.data[i].hasOwnProperty("undefined")){
-                          console.log("not")
-                        }else {
-                        for (var j = 0; j < response.data[i].likes.data.length; j++) {
+                        if (response.data[i].hasOwnProperty()){
+                         
+                           for (var j = 0; j < response.data[i].likes.data.length; j++) {
                             console.log(response.data[i].likes.data[j]);
+                        }else {
+                           console.log("not")
+                       
                         }
                       }
 
