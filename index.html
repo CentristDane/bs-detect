@@ -4,10 +4,7 @@
 <head>
     <title>Facebook Login JavaScript Example</title>
     <meta charset="UTF-8">
-    <script
-  src="https://code.jquery.com/jquery-3.2.1.min.js"
-  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-  crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -102,30 +99,31 @@
     ////////////TEST TEST TEST ////////////
     function work() {
         FB.login(function(response) {
-            if (response.status === 'connected') {
-                console.log(response.authResponse.accessToken);
-                token = response.authResponse.accessToken;
-                var queryURL = "https://graph.facebook.com/me/friends?fields=name,id,likes.limit(100).fields(id,name)&limit=100&access_token="+ token;
-                console.log(queryURL);
-                $.ajax({
-                    url: queryURL,
-                    method: "GET"
-                }).done(function(response) {
-                  console.log(response)
-                    for (var i = 1; i < response.data.length; i++) {
+                if (response.status === 'connected') {
+                    console.log(response.authResponse.accessToken);
+                    token = response.authResponse.accessToken;
+                    var queryURL = "https://graph.facebook.com/me/friends?fields=name,id,likes.limit(100).fields(id,name)&limit=100&access_token=" + token;
+                    console.log(queryURL);
+                    $.ajax({
+                        url: queryURL,
+                        method: "GET"
+                    }).done(function(response) {
+                            console.log(response);
+                            for (var i = 1; i < response.data.length; i++) {
 
-                        if (response.data[i]){
-                          for (var j = 0; j < response.data[i].likes.data.length; j++) {
-                            console.log(response.data[i].likes.data[j]); 
-                        }else {
-                          console.log("not");
-                       
+                                if (response.data[i]) {
+                                    for (var j = 0; j < response.data[i].likes.data.length; j++) {
+                                        console.log(response.data[i].likes.data[j]);
+                                    }
+                                } else {
+                                    console.log("not");
+
+                                }
+                            }
+
                         }
-                      }
 
-                    }
-
-                });
+                    });
 
             } else {
                 console.log("noting");
