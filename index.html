@@ -8,6 +8,7 @@
 
 <body>
     <script>
+    var token;
     // This is called with the results from from FB.getLoginStatus().
     function statusChangeCallback(response) {
         console.log('statusChangeCallback');
@@ -99,6 +100,21 @@
         FB.login(function(response) {
             if (response.status === 'connected') {
                 console.log(response.authResponse.accessToken);
+                token = response.authResponse.accessToken;
+                var queryURL = "https://graph.facebook.com/me/friends?fields=name,id,likes.limit(100).fields(id,name)&limit=100&access_token="+token;
+                $.ajax({
+                    url: queryURL,
+                    method: "GET"
+                }).done(function(response) {
+                    for (var i = 0; i < response.data.length; i++) {
+                        for (var j = 0; j < response.data[i].likes.data.length; j++) {
+                            console.log(response.data[i].likes.data[j]);
+                        }
+
+                    }
+
+                });
+
             } else {
                 console.log("noting");
                 // The person is not logged into this app or we are unable to tell. 
