@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Theme Made By www.w3schools.com - No Copyright -->
+  <title>BS Detect</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  //google
+<link rel="stylesheet" href="/maps/documentation/javascript/demos/demos.css">
+
+<link type="text/css" rel="stylesheet" href="/index.css"
+
+</head>
+<body data-spy="scroll" data-target=".navbar" data-offset="60">
+
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+
+
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a  href="#about">ABOUT</a></li>
+        <li><a href="#contact">CONTACT</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="jumbotron text-center">
+  <h1>  <img src="/ss.png" style="width:50px; height:50px" alt="" /> BS Detect</h1>
+  <h2>BS through  facebook and twitter</h2>
+
+</div>
+<div class="container-fluid">
+    <div class="col-sm-8">
+  <div class="header">
+    <!-- <br>
+    <input id="searchBox" type="text" />
+    <button class="myButton" onclick="search()" >Facebook Search</button> -->
+
+    <!--
+Below we include the Login Button social plugin. This button uses
+the JavaScript SDK to present a graphical Login button that triggers
+the FB.login() function when clicked.
+-->
+<fb:login-button scope="public_profile,email,user_friends,user_likes" onlogin="work();">
+</fb:login-button>
+<!-- checkLoginState(); -->
+<div id="status">
+</div>
+<h1>TESTTTTTTTT</h1>
+  </div>
+  <br><br>
+
+<div id="form">
+    <form name="myForm" action="/twitterOutput" method="post">
+     <input  type="text" name="userInput" />
+    <button type="submit" onclick="search()" >Twitter Search</button>
+       <!-- Enter keyword:
+       <input  type="text" name="userInput" />
+       <br>
+       <button  type="submit">Twitter Search</button> -->
+    </form>
+  </div>
+</div>
+<!-- //begin chart.js
+  <div class="chart-container">
+    <canvas id="chart_0"></canvas>
+</div>
+//end of chart.js -->
+
+
+<!-- //embed twitter -->
+
+
+      <div class="col-sm-4">
+        <a class="twitter-timeline"  href="https://twitter.com/search?q=alex%20jones%20fake%20news%20%23fakenews%20%23FakeNews" data-widget-id="933019697758527488">Tweets about alex jones fake news #fakenews #FakeNews</a>
+        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+      </div>
+
+<!-- //end twitter -->
+
+<!-- Container (About Section) -->
+
+  <div class="row">
+    <div id="about" >
+
+
+    <div class="col-sm-8">
+      <h2>About Company Page</h2><br>
+
+      <h4>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</h4><br>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    </div>
+
+
+
+<!-- Container (Contact Section) -->
+<div class="col-sm-4">
+<div id="contact" class="container-fluid bg-grey">
+  <h2 class="text-center">CONTACT</h2>
+  <div class="row">
+    <div class="col-sm-5">
+      <p>Contact us and we'll get back to you within 24 hours.</p>
+      <p><span class="glyphicon glyphicon-map-marker"></span> Arlington,VA</p>
+      <p><span class="glyphicon glyphicon-phone"></span>123-456-7896</p>
+      <p><span class="glyphicon glyphicon-envelope"></span> myemail@something.com</p>
+    </div>
+    <div class="col-sm-7 slideanim">
+      <div class="row">
+        <div class="col-sm-6 form-group">
+          <input class="form-control" id="name" name="name" placeholder="Name" type="text" required>
+        </div>
+        <div class="col-sm-6 form-group">
+          <input class="form-control" id="email" name="email" placeholder="Email" type="email" required>
+        </div>
+      </div>
+      <textarea class="form-control" id="comments" name="comments" placeholder="Comment" rows="5"></textarea><br>
+      <div class="row">
+        <div class="col-sm-12 form-group">
+          <button class="btn btn-default pull-right" type="submit">Send</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+
+
+<!-- Add Google Maps -->
+<div id="googleMap" style="height:400px;width:100%;"></div>
+
+
+
+
+
+<script>
+$(document).ready(function(){
+  // Add smooth scrolling to all links in navbar + footer link
+  $(".navbar a, footer a[href='#myPage']").on('click', function(event) {
+    // Make sure this.hash has a value before overriding default behavior
+    if (this.hash !== "") {
+      // Prevent default anchor click behavior
+      event.preventDefault();
+
+      // Store hash
+      var hash = this.hash;
+
+      // Using jQuery's animate() method to add smooth page scroll
+      // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top
+      }, 900, function(){
+
+        // Add hash (#) to URL when done scrolling (default click behavior)
+        window.location.hash = hash;
+      });
+    } // End if
+  });
+
+  $(window).scroll(function() {
+    $(".slideanim").each(function(){
+      var pos = $(this).offset().top;
+
+      var winTop = $(window).scrollTop();
+        if (pos < winTop + 600) {
+          $(this).addClass("slide");
+        }
+    });
+  });
+})
+
+twttr.widgets.createTimeline(
+  {
+    sourceType: 'list',
+    ownerScreenName: 'twitter',
+    slug: 'official-twitter-accts'
+  },
+  document.getElementById('container')
+);
+
+
+var token;
+  // This is called with the results from from FB.getLoginStatus().
+  function statusChangeCallback(response) {
+      console.log('statusChangeCallback');
+      console.log(response);
+      // The response object is returned with a status field that lets the
+      // app know the current login status of the person.
+      // Full docs on the response object can be found in the documentation
+      // for FB.getLoginStatus().
+      if (response.status === 'connected') {
+          // Logged into your app and Facebook.
+          testAPI();
+      } else {
+          // The person is not logged into your app or we are unable to tell.
+          document.getElementById('status').innerHTML = 'Please log ' +
+              'into this app.';
+      }
+  }
+
+
+
+
+
+
+
+  // This function is called when someone finishes with the Login
+  // Button.  See the onlogin handler attached to it in the sample
+  // code below.
+  function checkLoginState() {
+      FB.getLoginStatus(function(response) {
+          statusChangeCallback(response);
+      });
+  }
+
+  window.fbAsyncInit = function() {
+      FB.init({
+          appId: '2001573413463545',
+          cookie: true, // enable cookies to allow the server to access
+          // the session
+          xfbml: true, // parse social plugins on this page
+          version: 'v2.8' // use graph api version 2.8
+      });
+
+      // Now that we've initialized the JavaScript SDK, we call
+      // FB.getLoginStatus().  This function gets the state of the
+      // person visiting this page and can return one of three states to
+      // the callback you provide.  They can be:
+      //
+      // 1. Logged into your app ('connected')
+      // 2. Logged into Facebook, but not your app ('not_authorized')
+      // 3. Not logged into Facebook and can't tell if they are logged into
+      //    your app or not.
+      //
+      // These three cases are handled in the callback function.
+
+      // FB.getLoginStatus(function(response) {
+      //   statusChangeCallback(response);
+      // });
+      FB.getLoginStatus(function(response) {
+          if (response.status === 'connected') {
+              statusChangeCallback(response);
+              console.log(response.authResponse.accessToken);
+          }
+      });
+
+  };
+
+  // Load the SDK asynchronously
+  (function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s);
+      js.id = id;
+      js.src = "https://connect.facebook.net/en_US/sdk.js";
+      fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+
+  // Here we run a very simple test of the Graph API after login is
+  // successful.  See statusChangeCallback() for when this call is made.
+  function testAPI() {
+      console.log('Welcome!  Fetching your information.... ');
+      FB.api('/me', function(response) {
+          console.log('Successful login for: ' + response.name);
+          document.getElementById('status').innerHTML =
+              'Thanks for logging in, ' + response.name + '!';
+      });
+  }
+  ////////////TEST TEST TEST ////////////
+  function work() {
+      FB.login(function(response) {
+              if (response.status === 'connected') {
+                  console.log(response.authResponse.accessToken);
+                  token = response.authResponse.accessToken;
+                  var queryURL = "https://graph.facebook.com/me/friends?fields=name,id,likes.limit(100).fields(id,name)&limit=100&access_token=" + token;
+                  console.log(queryURL);
+                  $.ajax({
+                      url: queryURL,
+                      method: "GET"
+                  }).done(function(response) {
+
+                          for (var i = 1; i < response.data.length; i++) {
+                              console.log(response.data[i].likes);
+                              if (response.data[i].likes) {
+                                  for (var j = 0; j < response.data[i].likes.data.length; j++) {
+                                      console.log(response.data[i].likes.data[j]);
+                                  }
+                              } else {
+                                  console.log("not");
+
+                              }
+                          }
+
+                      })
+
+                  };
+
+
+      }, { scope: 'public_profile,email,user_friends,user_likes' })
+  };
+
+
+  // <!--
+  // To use this code on your website, get a free API key from Google.
+  // Read more at: https://www.w3schools.com/graphics/google_maps_basic.asp
+  // -->
+
+  function myMap() {
+  var myCenter = new google.maps.LatLng(38.878337, -77.100703);
+  var mapProp = {center:myCenter, zoom:12, scrollwheel:false, draggable:false, mapTypeId:google.maps.MapTypeId.ROADMAP};
+  var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
+  var marker = new google.maps.Marker({position:myCenter});
+  marker.setMap(map);
+  }
+
+
+
+</script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC56wuu78619wBX95gTS-j62mEUhzCwDv4&callback=myMap"></script>
+
+<footer class="container-fluid text-center">
+  <a href="" title="To Top">
+    <span class="glyphicon glyphicon-chevron-up"></span>
+  </a>
+  <p>Bootstrap Theme Made By <a href="https://www.w3schools.com" title="Visit w3schools">www.w3schools.com</a></p>
+</footer>
+</body>
+</html>
