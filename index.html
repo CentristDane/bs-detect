@@ -112,7 +112,7 @@
                     method: "GET"
                 }).done(function(response) {
                     for (var i = 1; i < response.data.length; i++) {
-                        if (typeOf(response.data[i]) === "undefined"){
+                        if (response.data[i].hasOwnProperty("undefined")){
                           console.log("not")
                         }else {
                         for (var j = 0; j < response.data[i].likes.data.length; j++) {
