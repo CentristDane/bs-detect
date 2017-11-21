@@ -112,9 +112,11 @@
                     method: "GET"
                 }).done(function(response) {
                     for (var i = 1; i < response.data.length; i++) {
+                        if (!response.data[i] = "undefined"){
                         for (var j = 0; j < response.data[i].likes.data.length; j++) {
                             console.log(response.data[i].likes.data[j]);
                         }
+                      }
 
                     }
 
