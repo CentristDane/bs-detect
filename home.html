@@ -50,14 +50,7 @@ Below we include the Login Button social plugin. This button uses
 the JavaScript SDK to present a graphical Login button that triggers
 the FB.login() function when clicked.
 -->
-<fb:login-button scope="public_profile,email,user_friends,user_likes" onlogin="work();">
-</fb:login-button>
-<!-- checkLoginState(); -->
-<div id="status">
-</div>
-<h1>TESTTTTTTTT</h1>
-  </div>
-  <br><br>
+
 
 <div id="form">
     <form name="myForm" action="/twitterOutput" method="post">
@@ -289,23 +282,17 @@ twttr.widgets.createTimeline(
     ///////////////////////////////////////////
 
 
-  // <!--
-  // To use this code on your website, get a free API key from Google.
-  // Read more at: https://www.w3schools.com/graphics/google_maps_basic.asp
-  // -->
-
-  function myMap() {
-  var myCenter = new google.maps.LatLng(38.878337, -77.100703);
-  var mapProp = {center:myCenter, zoom:12, scrollwheel:false, draggable:false, mapTypeId:google.maps.MapTypeId.ROADMAP};
-  var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
-  var marker = new google.maps.Marker({position:myCenter});
-  marker.setMap(map);
-  }
-
-
 
 </script>
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC56wuu78619wBX95gTS-j62mEUhzCwDv4&callback=myMap"></script>
+<fb:login-button scope="public_profile,email,user_friends,user_likes" onlogin="work();">
+</fb:login-button>
+<!-- checkLoginState(); -->
+<div id="status">
+</div>
+<h1>TESTTTTTTTT</h1>
+  </div>
+  <br><br>
+ 
 
 <footer class="container-fluid text-center">
   <a href="" title="To Top">
