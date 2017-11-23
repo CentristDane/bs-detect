@@ -17,15 +17,10 @@ var bodyParser = require('body-parser');
 // instruct the app to use the `bodyParser()` middleware for all routes
 app.use(bodyParser.urlencoded({ extended: true }));
 
+ app.get("/", function(req, res) {
+  res.sendFile(path.join(__dirname, "home.html"));
+ });
 
-
-// displays index.html on the home page
-app.get('/', function(req, res){
-  // The form's action is '/' and its method is 'POST',
-  // so the `app.post('/', ...` route will receive the
-  // result of our form
-  res.sendFile(path + "./home.html");
-});
 
 // This route receives the posted form.
 // As explained above, usage of 'body-parser' means
