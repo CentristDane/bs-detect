@@ -17,8 +17,6 @@ var bodyParser = require('body-parser');
 // instruct the app to use the `bodyParser()` middleware for all routes
 app.use(bodyParser.urlencoded({ extended: true }));
 
-// used to serve static files like css and js that are inside the public folder
-app.use('/', express.static(__dirname + '/public'));
 
 
 // displays index.html on the home page
@@ -26,7 +24,7 @@ app.get('/', function(req, res){
   // The form's action is '/' and its method is 'POST',
   // so the `app.post('/', ...` route will receive the
   // result of our form
-  res.sendFile(path + "/home.html");
+  res.sendFile(path + "./home.html");
 });
 
 // This route receives the posted form.
