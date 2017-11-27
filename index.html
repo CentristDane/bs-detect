@@ -566,7 +566,8 @@
                     method: "GET"
                 }).done(function(response) {
 
-
+                     var scoreList =[];
+                    var nameList = [];
                     var user = [];
                     var likes = [];
                     // var userArr=[];
@@ -632,8 +633,7 @@
                         console.log('both' + both)
                         var score = 0;
                         var name;
-                        var scoreList =[];
-                        var nameList = [];
+                       
                         for (var x = 0; x < both.length; x++) {
                             score += fakeSources[both[x]]
                             name = userName
