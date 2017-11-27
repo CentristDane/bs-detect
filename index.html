@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <title>BS Detect</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -13,108 +14,129 @@
     <script src=“https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.4/Chart.min.js“></script>
     <script type="text/javascript" src="/scoring.js"></script>
     <style media="screen">
-      body {
+    body {
         font: 400 15px;
         line-height: 1.8;
         color: #818181;
         font-family: 'Marcellus SC', serif;
-      }
-      .ui-widget-content {
+    }
+
+    .ui-widget-content {
         background: blue;
         border: 1px solid #DDDDDD;
         color: red;
-       }
-      #resizable { 
-        width: 250px; 
-        height: 500px; 
-        padding: 0.5em;
-        text-align: center; 
-        margin: 0; 
-      }
+    }
 
-      h2 {
+    #resizable {
+        width: 250px;
+        height: 500px;
+        padding: 0.5em;
+        text-align: center;
+        margin: 0;
+    }
+
+    h2 {
         font-size: 24px;
         text-transform: uppercase;
         color: #4f5f66;
         font-weight: 600;
         margin-bottom: 30px;
         font-family: 'Marcellus SC', serif;
-      }
-      h4 {
+    }
+
+    h4 {
         font-size: 19px;
         line-height: 1.375em;
         color: #4f5f66;
         font-weight: 400;
         margin-bottom: 30px;
         font-family: 'Marcellus SC', serif;
-      }
-      p {
+    }
+
+    p {
         font-family: 'Marcellus SC', serif;
-      }
-      .jumbotron {
+    }
+
+    .jumbotron {
         background-color: #ee8d1d;
         color: #4f5f66;
         padding: 100px 25px;
         font-family: 'Marcellus SC', serif;
-      }
-      .container-fluid {
+    }
+
+    .container-fluid {
         padding: 60px 50px;
-      }
-      .bg-grey {
+    }
+
+    .bg-grey {
         background-color: #f6f6f6;
-      }
-      .logo-small {
+    }
+
+    .logo-small {
         color: #ee8d1d;
         font-size: 50px;
-      }
-      .logo {
+    }
+
+    .logo {
         color: #ee8d1d;
         font-size: 200px;
-      }
-      .thumbnail {
+    }
+
+    .thumbnail {
         padding: 0 0 15px 0;
         border: none;
         border-radius: 0;
-      }
-      .thumbnail img {
+    }
+
+    .thumbnail img {
         width: 100%;
         height: 100%;
         margin-bottom: 10px;
-      }
-      .carousel-control.right, .carousel-control.left {
+    }
+
+    .carousel-control.right,
+    .carousel-control.left {
         background-image: none;
         color: #ee8d1d;
-      }
-      .carousel-indicators li {
+    }
+
+    .carousel-indicators li {
         border-color: #ee8d1d;
-      }
-      .carousel-indicators li.active {
+    }
+
+    .carousel-indicators li.active {
         background-color: #ee8d1d;
-      }
-      .item h4 {
+    }
+
+    .item h4 {
         font-size: 19px;
         line-height: 1.375em;
         font-weight: 400;
         font-style: italic;
         margin: 70px 0;
-      }
-      .item span {
+    }
+
+    .item span {
         font-style: normal;
-      }
-      .panel {
+    }
+
+    .panel {
         border: 1px solid #ee8d1d;
-        border-radius:0 !important;
+        border-radius: 0 !important;
         transition: box-shadow 0.5s;
-      }
-      .panel:hover {
-        box-shadow: 5px 0px 40px rgba(0,0,0, .2);
-      }
-      .panel-footer .btn:hover {
+    }
+
+    .panel:hover {
+        box-shadow: 5px 0px 40px rgba(0, 0, 0, .2);
+    }
+
+    .panel-footer .btn:hover {
         border: 1px solid #ee8d1d;
         background-color: #fff !important;
         color: #ee8d1d;
-      }
-      .panel-heading {
+    }
+
+    .panel-heading {
         color: #fff !important;
         background-color: #ee8d1d !important;
         padding: 25px;
@@ -123,23 +145,28 @@
         border-top-right-radius: 0px;
         border-bottom-left-radius: 0px;
         border-bottom-right-radius: 0px;
-      }
-      .panel-footer {
+    }
+
+    .panel-footer {
         background-color: white !important;
-      }
-      .panel-footer h3 {
+    }
+
+    .panel-footer h3 {
         font-size: 32px;
-      }
-      .panel-footer h4 {
+    }
+
+    .panel-footer h4 {
         color: #aaa;
         font-size: 14px;
-      }
-      .panel-footer .btn {
+    }
+
+    .panel-footer .btn {
         margin: 15px 0;
         background-color: #ee8d1d;
         color: #fff;
-      }
-      .navbar {
+    }
+
+    .navbar {
         margin-bottom: 0;
         background-color: #ee8d1d;
         z-index: 9999;
@@ -149,310 +176,498 @@
         letter-spacing: 4px;
         border-radius: 0;
         font-family: 'Marcellus SC', serif;
-      }
-      .navbar li a, .navbar .navbar-brand {
+    }
+
+    .navbar li a,
+    .navbar .navbar-brand {
         color: #4f5f66 !important;
-      }
-      .navbar-nav li a:hover, .navbar-nav li.active a {
+    }
+
+    .navbar-nav li a:hover,
+    .navbar-nav li.active a {
         color: #ee8d1d !important;
         background-color: #4f5f66 !important;
-      }
-      .navbar-default .navbar-toggle {
+    }
+
+    .navbar-default .navbar-toggle {
         border-color: transparent;
         color: #4f5f66 !important;
-      }
-      footer .glyphicon {
+    }
+
+    footer .glyphicon {
         font-size: 20px;
         margin-bottom: 20px;
         color: #ee8d1d;
-      }
-      .slideanim {
-        visibility:hidden;
-      }
-      .slide {
+    }
+
+    .slideanim {
+        visibility: hidden;
+    }
+
+    .slide {
         animation-name: slide;
         -webkit-animation-name: slide;
         animation-duration: 1s;
         -webkit-animation-duration: 1s;
         visibility: visible;
-      }
-      @keyframes slide {
+    }
+
+    @keyframes slide {
         0% {
-          opacity: 0;
-          transform: translateY(70%);
+            opacity: 0;
+            transform: translateY(70%);
         }
         100% {
-          opacity: 1;
-          transform: translateY(0%);
+            opacity: 1;
+            transform: translateY(0%);
         }
-      }
-      @-webkit-keyframes slide {
+    }
+
+    @-webkit-keyframes slide {
         0% {
-          opacity: 0;
-          -webkit-transform: translateY(70%);
+            opacity: 0;
+            -webkit-transform: translateY(70%);
         }
         100% {
-          opacity: 1;
-          -webkit-transform: translateY(0%);
+            opacity: 1;
+            -webkit-transform: translateY(0%);
         }
-      }
-      @media screen and (max-width: 768px) {
+    }
+
+    @media screen and (max-width: 768px) {
         .col-sm-4 {
-          text-align: center;
-          margin: 25px 0;
+            text-align: center;
+            margin: 25px 0;
         }
         .btn-lg {
-          width: 100%;
-          margin-bottom: 35px;
+            width: 100%;
+            margin-bottom: 35px;
         }
-      }
-      @media screen and (max-width: 480px) {
+    }
+
+    @media screen and (max-width: 480px) {
         .logo {
-          font-size: 150px;
+            font-size: 150px;
         }
-      }
-      .login{
+    }
+
+    .login {
         width: 500px;
-      }
-      #myChart {
+    }
+
+    #myChart {
         border-style: solid;
         border-width: 5px;
-      }
+    }
     </style>
-  </head>
+</head>
 
-  <body data-spy="scroll" data-target=".navbar" data-offset="60">
+<body data-spy="scroll" data-target=".navbar" data-offset="60">
     <nav class="navbar navbar-default navbar-fixed-top">
-      <div class="container">
-        <div class="navbar-header">
-        </div>
-        <div class="collapse navbar-collapse" id="myNavbar">
-          <ul class="nav navbar-nav navbar-right">
-            <li><a  href="#about">ABOUT</a></li>
-            <li><a href="#contact">CONTACT</a></li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-
-    <div class="jumbotron text-center">
-      <h1>BS DETECT</h1>
-      <h2>Deciphering through all the BS on Facebook and Twitter</h2>
-    </div>
-
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-sm-8">
-          <div class="">
-            <div>
-        <fb:login-button scope="public_profile,email,user_friends,user_likes" onlogin="work();">
-    </fb:login-button>
-              <!-- <div class="fb-login-button" data-width="30" data-max-rows="1" data-size="large" data-button-type="continue_with" data-show-faces="true" data-auto-logout-link="true" data-use-continue-as="true">                
-              </div> -->
-            </div>                             
-          <div id="status"></div>
-            <h1>TESTTTTTTTT #2</h1>
-              <canvas id="myChart" style= "width: 600px; height: 400px">
-          </div>  
-        </div>
-        <div class="col-sm-4">
-          <div id="form">
-            <form name="myForm" action="/twitterOutput" method="post"><br>
-              <button type="submit" class="btn btn-primary" id="submit">Twitter Search</button>
-                <input type="text" name="userInput" placeholder="Search a Hashtag!">
-            </form>
-          </div>
-          <div class="col-sm-4 ui-widget-content" id="resizable">
-            <a class="twitter-timeline"  href="https://twitter.com/search?q=%20trends%20%23fakenews%20" data-widget-id="933372302288408578">Tweets about trends #fakenews </a>
-            <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
-            </script>
-          </div>       
-        </div>
-      </div>
-  <!-- Container (About Section) -->
-      <div class="row">
-        <div id="about">
-          <div class="col-sm-8">
-            <h2>About Company Page</h2>
-            <br>
-            <h4>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</h4>
-            <br>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-          </div>
-        </div>
-  <!-- Container (Contact Section) -->
-        <div class="col-sm-4">
-          <div id="contact" class="container-fluid bg-grey">
-            <h2 class="text-center">CONTACT</h2>
-            <div class="row">
-              <div class="col-sm-5">
-                <p>Contact us and we'll get back to you within 24 hours.</p>
-                <p><span class="glyphicon glyphicon-map-marker"></span> Arlington,VA</p>
-                <p><span class="glyphicon glyphicon-phone"></span>123-456-7896</p>
-                <p><span class="glyphicon glyphicon-envelope"></span> myemail@something.com</p>
-              </div>
+        <div class="container">
+            <div class="navbar-header">
             </div>
-          </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#about">ABOUT</a></li>
+                    <li><a href="#contact">CONTACT</a></li>
+                </ul>
+            </div>
         </div>
-      </div>
+    </nav>
+    <div class="jumbotron text-center">
+        <h1>BS DETECT</h1>
+        <h2>Deciphering through all the BS on Facebook and Twitter</h2>
     </div>
-  <br><br><br>
-  <div id="googleMap" style="height:300px;width:100%"></div>
-  
-  <script>
-    $(document).ready(function(){
-    // Add smooth scrolling to all links in navbar + footer link
-    $(".navbar a, footer a[href='#myPage']").on('click', function(event) {
-      // Make sure this.hash has a value before overriding default behavior
-      if (this.hash !== "") {
-        // Prevent default anchor click behavior
-        event.preventDefault();
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-8">
+                <div class="">
+                    <div>
+                        <fb:login-button scope="public_profile,email,user_friends,user_likes" onlogin="work();">
+                        </fb:login-button>
+                        <!-- <div class="fb-login-button" data-width="30" data-max-rows="1" data-size="large" data-button-type="continue_with" data-show-faces="true" data-auto-logout-link="true" data-use-continue-as="true">                
+              </div> -->
+                    </div>
+                    <div id="status"></div>
+                    <h1>TESTTTTTTTT #2</h1>
+                    <canvas id="myChart" style="width: 600px; height: 400px">
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div id="form">
+                    <form name="myForm" action="/twitterOutput" method="post">
+                        <br>
+                        <button type="submit" class="btn btn-primary" id="submit">Twitter Search</button>
+                        <input type="text" name="userInput" placeholder="Search a Hashtag!">
+                    </form>
+                </div>
+                <div class="col-sm-4 ui-widget-content" id="resizable">
+                    <a class="twitter-timeline" href="https://twitter.com/search?q=%20trends%20%23fakenews%20" data-widget-id="933372302288408578">Tweets about trends #fakenews </a>
+                    <script>
+                    ! function(d, s, id) { var js, fjs = d.getElementsByTagName(s)[0],
+                            p = /^http:/.test(d.location) ? 'http' : 'https'; if (!d.getElementById(id)) { js = d.createElement(s);
+                            js.id = id;
+                            js.src = p + "://platform.twitter.com/widgets.js";
+                            fjs.parentNode.insertBefore(js, fjs); } }(document, "script", "twitter-wjs");
+                    </script>
+                </div>
+            </div>
+        </div>
+        <!-- Container (About Section) -->
+        <div class="row">
+            <div id="about">
+                <div class="col-sm-8">
+                    <h2>About Company Page</h2>
+                    <br>
+                    <h4>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</h4>
+                    <br>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                </div>
+            </div>
+            <!-- Container (Contact Section) -->
+            <div class="col-sm-4">
+                <div id="contact" class="container-fluid bg-grey">
+                    <h2 class="text-center">CONTACT</h2>
+                    <div class="row">
+                        <div class="col-sm-5">
+                            <p>Contact us and we'll get back to you within 24 hours.</p>
+                            <p><span class="glyphicon glyphicon-map-marker"></span> Arlington,VA</p>
+                            <p><span class="glyphicon glyphicon-phone"></span>123-456-7896</p>
+                            <p><span class="glyphicon glyphicon-envelope"></span> myemail@something.com</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <div id="googleMap" style="height:300px;width:100%"></div>
+    <script>
+    var reputable = 1;
+    var fakeNews = 2;
+    var reputableSrc = {};
+    reputableSrc['6013004059'] = reputable;
+    console.log(reputableSrc)
+    // need to discuss point system
+    //once we figure out how to make the function work, I might be able to add similar functions for regular news outlets
+    // can we create and input button for user to add fake news outlets and push it to the array.
+    var fakeSources = {};
+    fakeSources['357990416180'] = fakeNews //sputnik
+    fakeSources['326683984410'] = fakeNews //RT
+    fakeSources["146422995398181"] = fakeNews; //Addicting Info
+    fakeSources["177486166274"] = fakeNews; //Being Liberal
+    fakeSources["762592150466931"] = fakeNews; //If You Only News
+    fakeSources["253546571389025"] = fakeNews; //Bipartisan Report
+    fakeSources["180213475460766"] = fakeNews; //Liberal America
+    fakeSources["20950654496"] = fakeNews; //The Onion
+    fakeSources["38423635680"] = fakeNews; //Andy Borowitz
+    fakeSources["114517875225866"] = fakeNews; //The Other 98%
+    fakeSources["11539801009"] = fakeNews; //National Report
+    fakeSources["286075841466822"] = fakeNews; //The Daily Current
+    fakeSources["1672814509645693"] = fakeNews; //New Century Times
+    fakeSources["186219261412563"] = fakeNews; //US Uncut
+    fakeSources["1640832309490921"] = fakeNews; //Winning Democrats
+    fakeSources["346937065399354"] = fakeNews; //Occupy Democrats
+    fakeSources["298227226929908"] = fakeNews; //The Shovel
+    fakeSources["1439042583002670"] = fakeNews; //Clickhole
+    fakeSources["131929868907"] = fakeNews; //Collective Evolution
+    fakeSources["606565022725513"] = fakeNews; //Daily Buzz Live
+    fakeSources["463855417049923"] = fakeNews; //DC Gazette
+    fakeSources["320840064659503"] = fakeNews; //Newslo
+    fakeSources["211482380627"] = fakeNews; //Disclove.tv
+    fakeSources["35590531315"] = fakeNews; //Natural News
+    fakeSources["114896831960040"] = fakeNews; //WorldTruth.tv
+    fakeSources["311190048935167"] = fakeNews; //100PercentFedUp
+    fakeSources["820759888034335"] = fakeNews; //USA Newsflash
+    fakeSources["1425604894326440"] = fakeNews; //The Free Thought Project
+    fakeSources["179035672287016"] = fakeNews; //American News
+    fakeSources["236763656409160"] = fakeNews; //Project Veritas
+    fakeSources["687156898054966"] = fakeNews; //IJR Politics
+    fakeSources["1578074585774580"] = fakeNews; //IJR Life
+    fakeSources["80256732576"] = fakeNews; //Info Wars
+    fakeSources["116727628853"] = fakeNews; //RedFlag News
+    fakeSources["508887815910815"] = fakeNews; //BizPac Review
+    fakeSources["106547192707583"] = fakeNews; //RedState
+    fakeSources["95475020353"] = fakeNews; //Breitbart
+    fakeSources["140738092630206"] = fakeNews; //The Blaze
+    fakeSources["319569361390023"] = fakeNews; //Twitchy
+    fakeSources["245481491808"] = fakeNews; //Now The End Begins
+    fakeSources['1006457276057325'] = fakeNews //testting sean
+    var fakeArr = [
+        '357990416180', //sputnik
+        '326683984410', //RT
+        "146422995398181", //"Addicting Info",
+        "177486166274", //"Being Liberal",
+        "762592150466931", //"If You Only News",
+        "253546571389025", //"Bipartisan Report",
+        "180213475460766", //"Liberal America",
+        "20950654496", //"The Onion",
+        "38423635680", //"Andy Borowitz",
+        "114517875225866", //"The Other 98%",
+        "11539801009", //"National Report",
+        "286075841466822", //"The Daily Current",
+        "1672814509645693", //"New Century Times",
+        "186219261412563", //"US Uncut",
+        "1640832309490921", //"Winning Democrats",
+        "346937065399354", //"Occupy Democrats",
+        "298227226929908", //"The Shovel",
+        "1439042583002670", //"Clickhole",
+        "131929868907", //"Collective Evolution",
+        "606565022725513", //"Daily Buzz Live",
+        "463855417049923", //"DC Gazette",
+        "320840064659503", //"Newslo",
+        "211482380627", //"Disclove.tv",
+        "35590531315", //"Natural News",
+        "114896831960040", //"WorldTruth.tv",
+        "311190048935167", //"100PercentFedUp",
+        "820759888034335", //"USA Newsflash",
+        "1425604894326440", //"The Free Thought Project",
+        "179035672287016", //"American News",
+        "236763656409160", //"Project Veritas",
+        "687156898054966", //"IJR Politics",
+        "1578074585774580", //"IJR Life",
+        "80256732576", //"Info Wars",
+        "116727628853", //"RedFlag News",
+        "508887815910815", //"BizPac Review",
+        "106547192707583", //"RedState",
+        "95475020353", //"Breitbart",
+        "140738092630206", //"The Blaze",
+        "319569361390023", //"Twitchy",
+        "245481491808", //"Now The End Begins",
+        '1006457276057325' //test
+    ]
+    $(document).ready(function() {
+        // Add smooth scrolling to all links in navbar + footer link
+        $(".navbar a, footer a[href='#myPage']").on('click', function(event) {
+            // Make sure this.hash has a value before overriding default behavior
+            if (this.hash !== "") {
+                // Prevent default anchor click behavior
+                event.preventDefault();
 
-        // Store hash
-        var hash = this.hash;
+                // Store hash
+                var hash = this.hash;
 
-        // Using jQuery's animate() method to add smooth page scroll
-        // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
-        $('html, body').animate({
-          scrollTop: $(hash).offset().top
-        }, 900, function(){
+                // Using jQuery's animate() method to add smooth page scroll
+                // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
+                $('html, body').animate({
+                    scrollTop: $(hash).offset().top
+                }, 900, function() {
 
-          // Add hash (#) to URL when done scrolling (default click behavior)
-          window.location.hash = hash;
+                    // Add hash (#) to URL when done scrolling (default click behavior)
+                    window.location.hash = hash;
+                });
+            } // End if
         });
-      } // End if
-    });
 
-    $(window).scroll(function() {
-      $(".slideanim").each(function(){
-        var pos = $(this).offset().top;
+        $(window).scroll(function() {
+            $(".slideanim").each(function() {
+                var pos = $(this).offset().top;
 
-        var winTop = $(window).scrollTop();
-          if (pos < winTop + 600) {
-            $(this).addClass("slide");
-          }
-      });
-    });
+                var winTop = $(window).scrollTop();
+                if (pos < winTop + 600) {
+                    $(this).addClass("slide");
+                }
+            });
+        });
     })
 
     var token;
     // This is called with the results from from FB.getLoginStatus().
     function statusChangeCallback(response) {
-      console.log('statusChangeCallback');
-      console.log(response);
-      // The response object is returned with a status field that lets the
-      // app know the current login status of the person.
-      // Full docs on the response object can be found in the documentation
-      // for FB.getLoginStatus().
-      if (response.status === 'connected') {
-        // Logged into your app and Facebook.
-        testAPI();
-      } else {
+        console.log('statusChangeCallback');
+        console.log(response);
+        // The response object is returned with a status field that lets the
+        // app know the current login status of the person.
+        // Full docs on the response object can be found in the documentation
+        // for FB.getLoginStatus().
+        if (response.status === 'connected') {
+            // Logged into your app and Facebook.
+            testAPI();
+        } else {
             // The person is not logged into your app or we are unable to tell.
-        document.getElementById('status').innerHTML = 'Please log ' +
-            'into this app.';
-      }
+            document.getElementById('status').innerHTML = 'Please log ' +
+                'into this app.';
+        }
     }
     // This function is called when someone finishes with the Login
     // Button.  See the onlogin handler attached to it in the sample
     // code below.
     function checkLoginState() {
-      FB.getLoginStatus(function(response) {
-          statusChangeCallback(response);
-      });
+        FB.getLoginStatus(function(response) {
+            statusChangeCallback(response);
+        });
     }
 
     window.fbAsyncInit = function() {
-      FB.init({
-          appId: '2001573413463545',
-          cookie: true, // enable cookies to allow the server to access
-          // the session
-          xfbml: true, // parse social plugins on this page
-          version: 'v2.8' // use graph api version 2.8
-      });
+        FB.init({
+            appId: '2001573413463545',
+            cookie: true, // enable cookies to allow the server to access
+            // the session
+            xfbml: true, // parse social plugins on this page
+            version: 'v2.8' // use graph api version 2.8
+        });
 
-      // Now that we've initialized the JavaScript SDK, we call
-      // FB.getLoginStatus().  This function gets the state of the
-      // person visiting this page and can return one of three states to
-      // the callback you provide.  They can be:
-      //
-      // 1. Logged into your app ('connected')
-      // 2. Logged into Facebook, but not your app ('not_authorized')
-      // 3. Not logged into Facebook and can't tell if they are logged into
-      //    your app or not.
-      //
-      // These three cases are handled in the callback function.
+        // Now that we've initialized the JavaScript SDK, we call
+        // FB.getLoginStatus().  This function gets the state of the
+        // person visiting this page and can return one of three states to
+        // the callback you provide.  They can be:
+        //
+        // 1. Logged into your app ('connected')
+        // 2. Logged into Facebook, but not your app ('not_authorized')
+        // 3. Not logged into Facebook and can't tell if they are logged into
+        //    your app or not.
+        //
+        // These three cases are handled in the callback function.
 
-      // FB.getLoginStatus(function(response) {
-      //   statusChangeCallback(response);
-      // });
-      FB.getLoginStatus(function(response) {
-        if (response.status === 'connected') {
-          statusChangeCallback(response);
-          console.log(response.authResponse.accessToken);
-        }
-      });
+        // FB.getLoginStatus(function(response) {
+        //   statusChangeCallback(response);
+        // });
+        FB.getLoginStatus(function(response) {
+            if (response.status === 'connected') {
+                statusChangeCallback(response);
+                console.log(response.authResponse.accessToken);
+            }
+        });
     };
 
-                        // Load the SDK asynchronously
+    // Load the SDK asynchronously
     (function(d, s, id) {
-      var js, fjs = d.getElementsByTagName(s)[0];
-      if (d.getElementById(id)) return;
-      js = d.createElement(s);
-      js.id = id;
-      js.src = "https://connect.facebook.net/en_US/sdk.js";
-      fjs.parentNode.insertBefore(js, fjs);
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s);
+        js.id = id;
+        js.src = "https://connect.facebook.net/en_US/sdk.js";
+        fjs.parentNode.insertBefore(js, fjs);
     }(document, 'script', 'facebook-jssdk'));
 
     // Here we run a very simple test of the Graph API after login is
     // successful.  See statusChangeCallback() for when this call is made.
     function testAPI() {
-      console.log('Welcome!  Fetching your information.... ');
-      FB.api('/me', function(response) {
-          console.log('Successful login for: ' + response.name);
-          document.getElementById('status').innerHTML =
-              'Thanks for logging in, ' + response.name + '!';
-      });
+        console.log('Welcome!  Fetching your information.... ');
+        FB.api('/me', function(response) {
+            console.log('Successful login for: ' + response.name);
+            document.getElementById('status').innerHTML =
+                'Thanks for logging in, ' + response.name + '!';
+        });
     }
     ////////////TEST TEST TEST ////////////
     function work() {
-      FB.login(function(response) {
-        if (response.status === 'connected') {
-            console.log(response.authResponse.accessToken);
-            token = response.authResponse.accessToken;
-            var queryURL = "https://graph.facebook.com/me/friends?fields=name,id,likes.limit(100).fields(id,name)&limit=100&access_token=" + token;
-            console.log(queryURL);
-            $.ajax({
-                url: queryURL,
-                method: "GET"
-            }).done(function(response) {
+        FB.login(function(response) {
+                if (response.status === 'connected') {
+                    console.log(response.authResponse.accessToken);
+                    token = response.authResponse.accessToken;
+                    var queryURL = "https://graph.facebook.com/me/friends?fields=name,id,likes.limit(100).fields(id,name)&limit=100&access_token=" + token;
+                    console.log(queryURL);
+                    $.ajax({
+                        url: queryURL,
+                        method: "GET"
+                    }).done(function(response) {
 
-                    for (var i = 1; i < response.data.length; i++) {
-                        console.log(response.data[i].likes);
-                        if (response.data[i].likes) {
-                            for (var j = 0; j < response.data[i].likes.data.length; j++) {
-                                console.log(response.data[i].likes.data[j]);
-                            }
-                        } else {
-                            console.log("not");
-
+                        var user = [];
+                        var likes = [];
+                        var user_info = [];
+                        for (var i = 0; i < response.data.length; i++) {     
+                            user.push(response.data[i].name)
+                            user_info.push(response.data[i])
                         }
-                    }
+                        console.log(user_info);
+                        console.log(likes)
+                        console.log(user)
 
-                })
+                        function testScore(user_likes, userName) {
+                            console.log(user_likes)
 
-            };
+                            var userArr = []
+                            var likesArr = [];
+                            for (var i = 0; i < response.data.length; i++) {
+                                userArr.push(likes);
+                            }
 
-      }, { scope: 'public_profile,email,user_friends,user_likes' })
+                            for (var i = 0; i < user_likes.length; i++) {
+                                likesArr.push(user_likes[i].id); //user_id used was likes before wifi-less
+                            }
+                            console.log(response.data)
+                            console.log(user_likes);
+                            console.log(likesArr, userArr)
+
+                            likesArr.sort();
+                            fakeArr.sort();
+                            left = [];
+                            both = [];
+                            right = [];
+                            i = 0;
+                            j = 0;
+                            while (i < likesArr.length && j < fakeArr.length) {
+                                if (likesArr[i] < fakeArr[j]) {
+                                    left.push(likesArr[i]);
+                                    ++i;
+                                } else if (fakeArr[j] < likesArr[i]) {
+                                    right.push(fakeArr[j]);
+                                    ++j;
+                                } else {
+                                    both.push(likesArr[i]);
+                                    ++i;
+                                    ++j;
+                                }
+                            }
+                            while (i < likesArr.length) {
+                                left.push(likesArr[i]);
+                                ++i;
+                            }
+                            while (j < fakeArr.length) {
+                                right.push(fakeArr[j]);
+                                ++j;
+                            }
+                            console.log('left' + left)
+                            console.log('right' + right)
+                            console.log('both' + both)
+                            var score = 0;
+                            var name;
+                            for (var x = 0; x < both.length; x++) {
+                                score += fakeSources[both[x]]
+                                name = userName
+
+                            }
+                            console.log(score, name)
+                        }
+                        // console.log(likes)
+                        console.log(user_info)
+                        for (var x = 0; x < user_info.length; x++) {
+                            console.log(user_info[x])
+                            testScore(user_info[x].likes.data, user_info[x].name)
+                        }
+
+                    };
+
+                    // for (var i = 1; i < response.data.length; i++) {
+                    //     console.log(response.data[i].likes);
+                    //     if (response.data[i].likes) {
+                    //         for (var j = 0; j < response.data[i].likes.data.length; j++) {
+                    //             console.log(response.data[i].likes.data[j]);
+                    //         }
+                    //     } else {
+                    //         console.log("not");
+
+                    //     }
+                    // }
+
+         //       }
+
+       // };
+
+    }, { scope: 'public_profile,email,user_friends,user_likes' })
     };
-          // jQueryUI
+    // jQueryUI
     $(function() {
-      $( "#resizable" ).resizable();
+        $("#resizable").resizable();
     });
-
     </script>
     <footer class="container-fluid text-center">
-      <a href="" title="To Top"><span class="glyphicon glyphicon-chevron-up"></span></a>
+        <a href="" title="To Top"><span class="glyphicon glyphicon-chevron-up"></span></a>
     </footer>
-  </body>
+</body>
+
 </html>
