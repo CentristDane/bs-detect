@@ -569,7 +569,8 @@
                         var user = [];
                         var likes = [];
                         var user_info = [];
-                        for (var i = 0; i < response.data.length; i++) {     
+                        for (var i = 0; i < response.data.length; i++) {
+                          
                             user.push(response.data[i].name)
                             user_info.push(response.data[i])
                         }
@@ -640,7 +641,7 @@
                             testScore(user_info[x].likes.data, user_info[x].name)
                         }
 
-                    });
+                    
 
                     // for (var i = 1; i < response.data.length; i++) {
                     //     console.log(response.data[i].likes);
@@ -658,7 +659,8 @@
 
        // };
 
-    }, { scope: 'public_profile,email,user_friends,user_likes' }
+    }, { scope: 'public_profile,email,user_friends,user_likes' })
+};
     };
     // jQueryUI
     $(function() {
