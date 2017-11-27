@@ -660,7 +660,7 @@
     var myChart = new Chart(ctx, {
         type: 'pie',
         data: {
-            labels: nameList,
+            labels: [nameList],
             datasets: [{
                 backgroundColor: [
                     "#2ecc71",
@@ -671,7 +671,7 @@
                     "#e74c3c",
                     "#34495e"
                 ],
-                data: scoreList
+                data: [scoreList]
               
             }]
         }
