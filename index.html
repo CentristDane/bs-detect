@@ -255,10 +255,7 @@
         width: 500px;
     }
 
-    #myChart {
-        border-style: solid;
-        border-width: 5px;
-    }
+
     </style>
 </head>
 
@@ -647,17 +644,34 @@
                         testScore(user_info[x].likes.data, user_info[x].name)
                     };
                     }
-                    // for (var i = 1; i < response.data.length; i++) {
-                    //     console.log(response.data[i].likes);
-                    //     if (response.data[i].likes) {
-                    //         for (var j = 0; j < response.data[i].likes.data.length; j++) {
-                    //             console.log(response.data[i].likes.data[j]);
-                    //         }
-                    //     } else {
-                    //         console.log("not");
+           ////////////Test chart js
 
-                    //     }
-                    // }
+   var ctx = $("#myChart");
+   
+    var myChart = new Chart(ctx, {
+        type: 'pie',
+        data: {
+            labels: ["Gas", "Lodging", "Toll", "Entertainment", "Food"],
+            datasets: [{
+                backgroundColor: [
+                    "#2ecc71",
+                    "#3498db",
+                    "#95a5a6",
+                    "#9b59b6",
+                    "#f1c40f",
+                    "#e74c3c",
+                    "#34495e"
+                ],
+                data: [6, 2, 2, 9, 7]
+              
+            }]
+        }
+    });
+
+
+
+
+      /////////end chart js test      
 
                 })
 
