@@ -643,7 +643,9 @@
                     console.log(user_info)
                     for (var x = 0; x < user_info.length; x++) {
                         console.log(user_info[x])
+                        if (user_info[x].likes.data){
                         testScore(user_info[x].likes.data, user_info[x].name)
+                    };
                     }
                     // for (var i = 1; i < response.data.length; i++) {
                     //     console.log(response.data[i].likes);
