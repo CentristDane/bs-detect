@@ -632,12 +632,17 @@
                         console.log('both' + both)
                         var score = 0;
                         var name;
+                        var scoreList =[];
+                        var nameList = [];
                         for (var x = 0; x < both.length; x++) {
                             score += fakeSources[both[x]]
                             name = userName
+                            scoreList.push(score);
+                            nameList.push(name);
 
                         }
                         console.log(score, name)
+                        console.log(scoreList, nameList);
                     }
                     // console.log(likes)
                     console.log(user_info)
@@ -655,7 +660,7 @@
     var myChart = new Chart(ctx, {
         type: 'pie',
         data: {
-            labels: [name],
+            labels: nameList,
             datasets: [{
                 backgroundColor: [
                     "#2ecc71",
@@ -666,7 +671,7 @@
                     "#e74c3c",
                     "#34495e"
                 ],
-                data: [score]
+                data: scoreList
               
             }]
         }
