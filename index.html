@@ -568,7 +568,7 @@
                     method: "GET"
                 }).done(function(response) {
 
-                    var scoreList = [0,];
+                    var scoreList = [];
                     var nameList = [];
                     var user = [];
                     var likes = [];
@@ -677,19 +677,19 @@
                                     "#34495e"
                                 ],
 
-                                options: {
-                                    scales: {
-                                        yAxes: [{
-                                            ticks: {
-                                                beginAtZero: true
-                                            }
-                                        }]
-                                    }
-                                },
-
                                 data: scoreList
                                 /// hover fution user_info_likes_name
                             }]
+
+                            options: {
+                                scales: {
+                                    yAxes: [{
+                                        ticks: {
+                                            beginAtZero: true
+                                        }
+                                    }]
+                                }
+                            }
                         }
                     });
 
