@@ -23,6 +23,7 @@
         font-family: 'Marcellus SC', serif;
     }
 
+
     .btn-primary{
         background-color:#818181;
     }
@@ -242,17 +243,18 @@
     </nav>
     <div class="jumbotron text-center">
         <h1>BS DETECT</h1>
-        <h2>Deciphering through all the BS on Facebook and Twitter</h2>
+        <h2>Sniffing it out</h2>
     </div>
     <div class="container-fluid">
         <div class="row">
             <div class="col-sm-8">
                 <div class="">
                     <div>
-                        <fb:login-button scope="public_profile,email,user_friends,user_likes" onlogin="work();">
-                        </fb:login-button>
-                        <!-- <div class="fb-login-button" data-width="30" data-max-rows="1" data-size="large" data-button-type="continue_with" data-show-faces="true" data-auto-logout-link="true" data-use-continue-as="true">
-              </div> -->
+                        <fb:login-button scope="public_profile,email,user_friends,user_likes" onlogin="work();" data-width="30" data-max-rows="1" data-size="large" data-button-type="continue_with" data-show-faces="true" data-auto-logout-link="true" data-use-continue-as="true">
+                    </fb:login-button>
+                        <!-- <fb:login-button scope="public_profile,email,user_friends,user_likes" onlogin="work();">
+                        </fb:login-button> -->
+                 
                     </div>
                     <div id="status"></div>
 
