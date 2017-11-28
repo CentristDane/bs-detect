@@ -660,6 +660,7 @@
    
     var myChart = new Chart(ctx, {
         type: 'bar',
+        scaleStartValue : 0,
         //// add options array to make options: 
         data: {
             labels: nameList,
@@ -678,7 +679,8 @@
                         yAxes:[{
                             display:true,
                             ticks:{
-                                beginAtZero:true
+                                beginAtZero:true,
+                                max:20
                             }
                         }]
                     }
