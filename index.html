@@ -568,8 +568,8 @@
                     method: "GET"
                 }).done(function(response) {
 
-                    var scoreList = [];
-                    var nameList = [];
+                    var scoreList = [0,];
+                    var nameList = [" ",];
                     var user = [];
                     var likes = [];
                     // var userArr=[];
@@ -686,13 +686,8 @@
                                             suggestedMin: 0,
                                             beginAtZero: true
                                         }
-                                    }],
-                                        xAxes: [{
-                                        ticks: {
-                                            suggestedMin: 0,
-                                            beginAtZero: true
-                                        }
                                     }]
+
                                 }
                             }
                         }
