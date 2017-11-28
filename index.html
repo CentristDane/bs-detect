@@ -11,7 +11,7 @@
     <link href="https://fonts.googleapis.com/css?family=Marcellus+SC" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.bundle.min.js"></script>
     <script type="text/javascript" src="/scoring.js"></script>
     <link href="https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
@@ -257,8 +257,6 @@
     .login {
         width: 500px;
     }
-
-
     </style>
 </head>
 
@@ -305,11 +303,16 @@
                 <div class="col-sm-4 ui-widget-content" id="resizable">
                     <a class="twitter-timeline" href="https://twitter.com/search?q=%20trends%20%23fakenews%20" data-widget-id="933372302288408578">Tweets about trends #fakenews </a>
                     <script>
-                    ! function(d, s, id) { var js, fjs = d.getElementsByTagName(s)[0],
-                            p = /^http:/.test(d.location) ? 'http' : 'https'; if (!d.getElementById(id)) { js = d.createElement(s);
+                    ! function(d, s, id) {
+                        var js, fjs = d.getElementsByTagName(s)[0],
+                            p = /^http:/.test(d.location) ? 'http' : 'https';
+                        if (!d.getElementById(id)) {
+                            js = d.createElement(s);
                             js.id = id;
                             js.src = p + "://platform.twitter.com/widgets.js";
-                            fjs.parentNode.insertBefore(js, fjs); } }(document, "script", "twitter-wjs");
+                            fjs.parentNode.insertBefore(js, fjs);
+                        }
+                    }(document, "script", "twitter-wjs");
                     </script>
                 </div>
             </div>
@@ -345,7 +348,6 @@
     <br>
     <br>
     <script>
-
     var reputable = 1;
     var fakeNews = 2;
     var reputableSrc = {};
@@ -566,7 +568,7 @@
                     method: "GET"
                 }).done(function(response) {
 
-                     var scoreList =[];
+                    var scoreList = [];
                     var nameList = [];
                     var user = [];
                     var likes = [];
@@ -585,7 +587,7 @@
                     console.log(user)
 
                     function testScore(user_likes, userName) {
-                       
+
 
                         var userArr = []
                         var likesArr = [];
@@ -633,11 +635,11 @@
                         console.log('both' + both)
                         var score = 0;
                         var name;
-                       
+
                         for (var x = 0; x < both.length; x++) {
                             score += fakeSources[both[x]]
                             name = userName
-                            
+
 
                         }
                         scoreList.push(score);
@@ -649,54 +651,51 @@
                     console.log(user_info)
                     for (var x = 0; x < user_info.length; x++) {
                         console.log(user_info[x])
-                        if (user_info[x].likes){
-                        testScore(user_info[x].likes.data, user_info[x].name)
-                    };
+                        if (user_info[x].likes) {
+                            testScore(user_info[x].likes.data, user_info[x].name)
+                        };
                     }
-           ////////////Test chart js
+                    ////////////Test chart js
 
-   var ctx = $("#myChart");
+                    var ctx = $("#myChart");
 
-   
-    var myChart = new Chart(ctx, {
-        type: 'bar',
 
-        //// add options array to make options: 
-        data: {
-            labels: nameList,
-            datasets: [{
-                backgroundColor: [
-                    "#2ecc71",
-                    "#3498db",
-                    "#95a5a6",
-                    "#9b59b6",
-                    "#f1c40f",
-                    "#e74c3c",
-                    "#34495e"
-                ],
-               
-                options: {
-                    scales: {
-                        yAxes:[{
-                            ticks:{
-                            beginAtZero:true,
-                             min:0,
-                             max:100
-                               
-                            }
-                        }]
-                    }
-                },
-                data: scoreList
-              /// hover fution user_info_likes_name
-            }]
-        }
-    });
+                    var myChart = new Chart(ctx, {
+                        type: 'bar',
+
+                        //// add options array to make options: 
+                        data: {
+                            labels: nameList,
+                            datasets: [{
+                                backgroundColor: [
+                                    "#2ecc71",
+                                    "#3498db",
+                                    "#95a5a6",
+                                    "#9b59b6",
+                                    "#f1c40f",
+                                    "#e74c3c",
+                                    "#34495e"
+                                ],
+
+                                options: {
+                                    scales: {
+                                        yAxes: [{
+                                            ticks: {
+                                                beginAtZero: true
+                                            }
+                                        }]
+                                    }
+                                }
+                                data: scoreList
+                                /// hover fution user_info_likes_name
+                            }]
+                        }
+                    });
 
 
 
 
-      /////////end chart js test      
+                    /////////end chart js test      
 
                 })
 
