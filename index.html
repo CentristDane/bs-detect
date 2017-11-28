@@ -585,7 +585,7 @@
                     console.log(user)
 
                     function testScore(user_likes, userName) {
-                        console.log(user_likes)
+                        console.log(user_likes_name)
 
                         var userArr = []
                         var likesArr = [];
@@ -660,6 +660,7 @@
    
     var myChart = new Chart(ctx, {
         type: 'bar',
+        //// add options array to make options: 
         data: {
             labels: nameList,
             datasets: [{
@@ -672,8 +673,18 @@
                     "#e74c3c",
                     "#34495e"
                 ],
+                options: {
+                    scales: {
+                        yAxes:[{
+                            display:true,
+                            ticks:{
+                                beginAtZero:true
+                            }
+                        }]
+                    }
+                },
                 data: scoreList
-              
+              /// hover fution user_info_likes_name
             }]
         }
     });
