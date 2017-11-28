@@ -660,7 +660,7 @@
    
     var myChart = new Chart(ctx, {
         type: 'bar',
-        scaleStartValue : 0,
+
         //// add options array to make options: 
         data: {
             labels: nameList,
@@ -674,18 +674,20 @@
                     "#e74c3c",
                     "#34495e"
                 ],
+                data: scoreList,
                 options: {
                     scales: {
                         yAxes:[{
-                            display:true,
+                            
+                          
                             ticks:{
-                                beginAtZero:true,
-                                max:20
+                                beginAtZero:true
+                               
                             }
                         }]
                     }
                 },
-                data: scoreList
+                
               /// hover fution user_info_likes_name
             }]
         }
