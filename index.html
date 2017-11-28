@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <title>BS Detect</title>
     <meta charset="utf-8">
@@ -24,20 +23,23 @@
         font-family: 'Marcellus SC', serif;
     }
 
+    .btn-primary{
+        background-color:#818181;
+    }
     .ui-widget-content {
         background: blue;
         border: 1px solid #DDDDDD;
         color: red;
     }
-
     #resizable {
         width: 250px;
         height: 500px;
         padding: 0.5em;
         text-align: center;
         margin: 0;
-    }
+        background-color: #ee8d1d;
 
+    }
     h2 {
         font-size: 24px;
         text-transform: uppercase;
@@ -46,7 +48,6 @@
         margin-bottom: 30px;
         font-family: 'Marcellus SC', serif;
     }
-
     h4 {
         font-size: 19px;
         line-height: 1.375em;
@@ -55,62 +56,50 @@
         margin-bottom: 30px;
         font-family: 'Marcellus SC', serif;
     }
-
     p {
         font-family: 'Marcellus SC', serif;
     }
-
     .jumbotron {
         background-color: #ee8d1d;
         color: #4f5f66;
         padding: 100px 25px;
         font-family: 'Marcellus SC', serif;
     }
-
     .container-fluid {
         padding: 60px 50px;
     }
-
     .bg-grey {
         background-color: #f6f6f6;
     }
-
     .logo-small {
         color: #ee8d1d;
         font-size: 50px;
     }
-
     .logo {
         color: #ee8d1d;
         font-size: 200px;
     }
-
     .thumbnail {
         padding: 0 0 15px 0;
         border: none;
         border-radius: 0;
     }
-
     .thumbnail img {
         width: 100%;
         height: 100%;
         margin-bottom: 10px;
     }
-
     .carousel-control.right,
     .carousel-control.left {
         background-image: none;
         color: #ee8d1d;
     }
-
     .carousel-indicators li {
         border-color: #ee8d1d;
     }
-
     .carousel-indicators li.active {
         background-color: #ee8d1d;
     }
-
     .item h4 {
         font-size: 19px;
         line-height: 1.375em;
@@ -118,27 +107,22 @@
         font-style: italic;
         margin: 70px 0;
     }
-
     .item span {
         font-style: normal;
     }
-
     .panel {
         border: 1px solid #ee8d1d;
         border-radius: 0 !important;
         transition: box-shadow 0.5s;
     }
-
     .panel:hover {
         box-shadow: 5px 0px 40px rgba(0, 0, 0, .2);
     }
-
     .panel-footer .btn:hover {
         border: 1px solid #ee8d1d;
         background-color: #fff !important;
         color: #ee8d1d;
     }
-
     .panel-heading {
         color: #fff !important;
         background-color: #ee8d1d !important;
@@ -149,26 +133,21 @@
         border-bottom-left-radius: 0px;
         border-bottom-right-radius: 0px;
     }
-
     .panel-footer {
         background-color: white !important;
     }
-
     .panel-footer h3 {
         font-size: 32px;
     }
-
     .panel-footer h4 {
         color: #aaa;
         font-size: 14px;
     }
-
     .panel-footer .btn {
         margin: 15px 0;
         background-color: #ee8d1d;
         color: #fff;
     }
-
     .navbar {
         margin-bottom: 0;
         background-color: #ee8d1d;
@@ -180,33 +159,27 @@
         border-radius: 0;
         font-family: 'Marcellus SC', serif;
     }
-
     .navbar li a,
     .navbar .navbar-brand {
         color: #4f5f66 !important;
     }
-
     .navbar-nav li a:hover,
     .navbar-nav li.active a {
         color: #ee8d1d !important;
         background-color: #4f5f66 !important;
     }
-
     .navbar-default .navbar-toggle {
         border-color: transparent;
         color: #4f5f66 !important;
     }
-
     footer .glyphicon {
         font-size: 20px;
         margin-bottom: 20px;
         color: #ee8d1d;
     }
-
     .slideanim {
         visibility: hidden;
     }
-
     .slide {
         animation-name: slide;
         -webkit-animation-name: slide;
@@ -214,7 +187,6 @@
         -webkit-animation-duration: 1s;
         visibility: visible;
     }
-
     @keyframes slide {
         0% {
             opacity: 0;
@@ -225,7 +197,6 @@
             transform: translateY(0%);
         }
     }
-
     @-webkit-keyframes slide {
         0% {
             opacity: 0;
@@ -236,7 +207,6 @@
             -webkit-transform: translateY(0%);
         }
     }
-
     @media screen and (max-width: 768px) {
         .col-sm-4 {
             text-align: center;
@@ -247,19 +217,16 @@
             margin-bottom: 35px;
         }
     }
-
     @media screen and (max-width: 480px) {
         .logo {
             font-size: 150px;
         }
     }
-
     .login {
         width: 500px;
     }
     </style>
 </head>
-
 <body data-spy="scroll" data-target=".navbar" data-offset="60">
     <nav class="navbar navbar-default navbar-fixed-top">
         <div class="container">
@@ -267,8 +234,8 @@
             </div>
             <div class="collapse navbar-collapse" id="myNavbar">
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#about">ABOUT</a></li>
-                    <li><a href="#contact">CONTACT</a></li>
+                   <!--  <li><a href="#about">ABOUT</a></li> -->
+                    <li><a href="#contact">References</a></li>
                 </ul>
             </div>
         </div>
@@ -284,11 +251,11 @@
                     <div>
                         <fb:login-button scope="public_profile,email,user_friends,user_likes" onlogin="work();">
                         </fb:login-button>
-                        <!-- <div class="fb-login-button" data-width="30" data-max-rows="1" data-size="large" data-button-type="continue_with" data-show-faces="true" data-auto-logout-link="true" data-use-continue-as="true">                
+                        <!-- <div class="fb-login-button" data-width="30" data-max-rows="1" data-size="large" data-button-type="continue_with" data-show-faces="true" data-auto-logout-link="true" data-use-continue-as="true">
               </div> -->
                     </div>
                     <div id="status"></div>
-                    <h1>TESTTTTTTTT #2</h1>
+
                     <canvas id="myChart" style="width: 600px; height: 400px">
                 </div>
             </div>
@@ -317,27 +284,32 @@
                 </div>
             </div>
         </div>
+        <br>
         <!-- Container (About Section) -->
         <div class="row">
             <div id="about">
                 <div class="col-sm-8">
-                    <h2>About Company Page</h2>
+             <!--        <h2>About Company Page</h2>
                     <br>
                     <h4>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</h4>
                     <br>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p> -->
                 </div>
             </div>
             <!-- Container (Contact Section) -->
             <div class="col-sm-4">
                 <div id="contact" class="container-fluid bg-grey">
-                    <h2 class="text-center">CONTACT</h2>
+                    <h2 class="text-center">References</h2>
                     <div class="row">
                         <div class="col-sm-5">
-                            <p>Contact us and we'll get back to you within 24 hours.</p>
-                            <p><span class="glyphicon glyphicon-map-marker"></span> Arlington,VA</p>
-                            <p><span class="glyphicon glyphicon-phone"></span>123-456-7896</p>
-                            <p><span class="glyphicon glyphicon-envelope"></span> myemail@something.com</p>
+                            <ol>
+                           <li> <a href="https://www.state.gov/documents/organization/271028.pdf"> State Dept. Report on Digital Disinformation</a></li>
+                            <br>
+                           <li> <a href="https://drive.google.com/file/d/0Byj_1ybuSGp_NmYtRF95VTJTeUk/view">Report on Russian Network</a></li>
+                            <br>
+                            <li> <a href="https://blog.twitter.com/official/en_us/topics/company/2017/Update-Russian-Interference-in-2016--Election-Bots-and-Misinformation.html">Twitter Report and Disclosure</a></li>
+                        </ol>
+
                         </div>
                     </div>
                 </div>
@@ -441,6 +413,51 @@
         "245481491808", //"Now The End Begins",
         '1006457276057325' //test
     ]
+  var toName={};
+    toName['357990416180'] = 'sputnik'
+    toName['326683984410'] = 'RT'
+    toName["146422995398181"] = 'Addicting Info'
+    toName["177486166274"] = 'Being Liberal'
+    toName["762592150466931"] = 'If You Only News'
+    toName["253546571389025"] = 'Bipartisan Report'
+    toName["180213475460766"] = 'Liberal America'
+    toName["20950654496"] = 'The Onion'
+    toName["38423635680"] = 'Andy Borowitz'
+    toName["114517875225866"] = 'The Other 98%'
+    toName["11539801009"] = 'National Report'
+    toName["286075841466822"] = 'The Daily Current'
+    toName["1672814509645693"] = 'New Century Times'
+    toName["186219261412563"] = 'US Uncut'
+    toName["1640832309490921"] = 'Winning Democrats'
+    toName["346937065399354"] = 'Occupy Democrats'
+    toName["298227226929908"] = 'The Shovel'
+    toName["1439042583002670"] = 'Clickhole'
+    toName["131929868907"] = 'Collective Evolution'
+    toName["606565022725513"] = 'Daily Buzz Live'
+    toName["463855417049923"] = 'DC Gazette'
+    toName["320840064659503"] = 'Newslo'
+    toName["211482380627"] = 'Disclove.tv'
+    toName["35590531315"] = 'Natural News'
+    toName["114896831960040"] = 'WorldTruth.tv'
+    toName["311190048935167"] = '100PercentFedUp'
+    toName["820759888034335"] = 'USA Newsflash'
+    toName["1425604894326440"] = 'The Free Thought Project'
+    toName["179035672287016"] = 'American News'
+    toName["236763656409160"] = 'Project Veritas'
+    toName["687156898054966"] = 'IJR Politics'
+    toName["1578074585774580"] = 'IJR Life'
+    toName["80256732576"] = 'Info Wars'
+    toName["116727628853"] = 'RedFlag News'
+    toName["508887815910815"] = 'BizPac Review'
+    toName["106547192707583"] = 'RedState'
+    toName["95475020353"] = 'Breitbart'
+    toName["140738092630206"] = 'The Blaze'
+    toName["319569361390023"] = 'Twitchy'
+    toName["245481491808"] = 'Now The End Begins'
+    toName['1006457276057325'] ='testting sean'
+
+
+
     $(document).ready(function() {
         // Add smooth scrolling to all links in navbar + footer link
         $(".navbar a, footer a[href='#myPage']").on('click', function(event) {
@@ -568,10 +585,11 @@
                     method: "GET"
                 }).done(function(response) {
 
-                    var scoreList = [0,];
-                    var nameList = [" ",];
+                    var scoreList = [];
+                    var nameList = [];
                     var user = [];
                     var likes = [];
+                    var likesName=[]
                     // var userArr=[];
                     var user_info = [];
                     for (var i = 0; i < response.data.length; i++) {
@@ -591,6 +609,7 @@
 
                         var userArr = []
                         var likesArr = [];
+                        var userLikes=[];
                         for (var i = 0; i < response.data.length; i++) {
                             userArr.push(likes);
                         }
@@ -636,16 +655,19 @@
                         var score = 0;
                         var name;
 
+
                         for (var x = 0; x < both.length; x++) {
                             score += fakeSources[both[x]]
                             name = userName
-
-
+                            userLikes.push(toName[both[x]])
                         }
+                        likesName.push(userLikes);
                         scoreList.push(score);
                         nameList.push(name);
+                        console.log(userLikes);
                         console.log(score, name)
                         console.log(scoreList, nameList);
+                        console.log(likesName)
                     }
                     // console.log(likes)
                     console.log(user_info)
@@ -657,46 +679,136 @@
                     }
                     ////////////Test chart js
 
+
+
+
                     var ctx = $("#myChart");
 
 
-                    var myChart = new Chart(ctx, {
-                        type: 'bar',
+                //////////chart test-- young
+                var data = {
+    labels: nameList,
+      datasets: [
+        {
+            label: "Fake News Likes ",
+            fill: true,
+            backgroundColor: 'rgba(122, 171, 226, 0.7)',
+            data: scoreList
+        }
+    ]
+};
 
-                        //// add options array to make options: 
-                        data: {
-                            labels: nameList,
-                            datasets: [{
-                                backgroundColor: [
-                                    "#2ecc71",
-                                    "#3498db",
-                                    "#95a5a6",
-                                    "#9b59b6",
-                                    "#f1c40f",
-                                    "#e74c3c",
-                                    "#34495e"
-                                ],
-                                data: scoreList
-                                /// hover fution user_info_likes_name
-                            }],
-                            options: {
-                                scales: {
-                                    yAxes: [{
-                                        ticks: {
-                                            suggestedMin: 0,
-                                            beginAtZero: true
-                                        }
-                                    }]
+var options = {
+tooltips: {
+        callbacks: {
+            label: function(tooltipItem) {
+                return likesName;
+            }
+        }
+    },
+        title: {
+                  display: true,
+                  text: 'User',
+                  position: 'bottom'
+              },
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero:true
+                }
+            }]
+        }
+};
 
-                                }
-                            }
-                        }
-                    });
+// Chart declaration:
+var myBarChart = new Chart(ctx, {
+    type: 'bar',
+    data: data,
+    options: options
+});
+
+var data = {
+    labels: nameList,
+      datasets: [
+        {
+            label: "Fake News Likes ",
+            fill: true,
+            backgroundColor: 'rgba(122, 171, 226, 0.7)',
+            data: scoreList
+        }
+    ]
+};
+
+var options = {
+tooltips: {
+        callbacks: {
+            label: function(tooltipItem) {
+                return likesName;
+            }
+        }
+    },
+        title: {
+                  display: true,
+                  text: 'User',
+                  position: 'bottom'
+              },
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero:true
+                }
+            }]
+        }
+};
+
+/////////////end young
+
+// Chart declaration:
+// var myBarChart = new Chart(ctx, {
+//     type: 'bar',
+//     data: data,
+//     options: options
+// });
+//
+//
+//
+//                     var myChart = new Chart(ctx, {
+//                         type: 'bar',
+//
+//                         //// add options array to make options:
+//                         data: {
+//                             labels: nameList,
+//                             datasets: [{
+//                                 backgroundColor: [
+//                                     "#2ecc71",
+//                                     "#3498db",
+//                                     "#95a5a6",
+//                                     "#9b59b6",
+//                                     "#f1c40f",
+//                                     "#e74c3c",
+//                                     "#34495e"
+//                                 ],
+//                                 data: scoreList
+//                                 /// hover fution user_info_likes_name
+//                             }],
+//                             options: {
+//                                 // scales: {
+//                                 //     yAxes: [{
+//                                 //         // ticks: {
+//                                 //         //     // suggestedMin: 0,
+//                                 //         //     // beginAtZero: true
+//                                 //         // }
+//                                 //     }]
+//                                 //
+//                                 // }
+//                             }
+//                         }
+//                     });
+//
 
 
 
-
-                    /////////end chart js test      
+                    /////////end chart js test
 
                 })
 
