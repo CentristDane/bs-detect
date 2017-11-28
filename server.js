@@ -40,6 +40,8 @@ app.post('/twitterOutput', function(req, res) {
 
             if (tweets != null) {
                 res.writeHead(200, { 'content-type': 'text/html; charset=utf-8' });
+                 res.write('<div style="background-color: 3bb1d0;"></div>');
+                  res.write('<button> <a href="/">GO BACK</a> <button>');
 
                 for (var i = 0; i < tweets.length; i++) {
                     var tweetholder = [];
@@ -53,7 +55,7 @@ app.post('/twitterOutput', function(req, res) {
 
                     res.write('<style> body{background:radial-gradient(circle farthest-side at 0% 50%,#fb1 23.5%,rgba(240,166,17,0) 0)21px 30px,radial-gradient(circle farthest-side at 0% 50%,#B71 24%,rgba(240,166,17,0) 0)19px 30px,linear-gradient(#fb1 14%,rgba(240,166,17,0) 0, rgba(240,166,17,0) 85%,#fb1 0)0 0,linear-gradient(150deg,#fb1 24%,#B71 0,#B71 26%,rgba(240,166,17,0) 0,rgba(240,166,17,0) 74%,#B71 0,#B71 76%,#fb1 0)0 0,linear-gradient(30deg,#fb1 24%,#B71 0,#B71 26%,rgba(240,166,17,0) 0,rgba(240,166,17,0) 74%,#B71 0,#B71 76%,#fb1 0)0 0,linear-gradient(90deg,#B71 2%,#fb1 0,#fb1 98%,#B71 0%)0 0 #fb1;background-size:40px 60px;} </style>');
                     res.write('<br>');
-                    res.write('<div style="background-color:4f5f66;" >');
+                    res.write('<div style="background-color:4f5f66" width=30%; >');
                     res.write('<img src=' + p_image + '>');
                     res.write('<br>');
                     res.write('<b style="color:ee8d1d">' + 'Name: ' + '</b>' + '<p style="color:white">'+ user_name + '</p>' + '<br>');

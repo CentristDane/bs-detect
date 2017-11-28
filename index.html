@@ -256,7 +256,7 @@
                         </fb:login-button> -->
                  
                     </div>
-                    <div id="status"></div>
+                    <!-- //<div id="status"></div> -->
 
                     <canvas id="myChart" style="width: 600px; height: 400px">
                 </div>
@@ -690,6 +690,7 @@
                 //////////chart test-- young
                 var data = {
     labels: nameList,
+    news: likesName,
       datasets: [
         {
             label: "Fake News Likes ",
@@ -703,8 +704,8 @@
 var options = {
 tooltips: {
         callbacks: {
-            label: function(tooltipItem) {
-                return likesName;
+            label: function(tooltipItem, data) {
+                return data.news[tooltipItem.index]
             }
         }
     },
@@ -729,39 +730,9 @@ var myBarChart = new Chart(ctx, {
     options: options
 });
 
-var data = {
-    labels: nameList,
-      datasets: [
-        {
-            label: "Fake News Likes ",
-            fill: true,
-            backgroundColor: 'rgba(122, 171, 226, 0.7)',
-            data: scoreList
-        }
-    ]
-};
 
-var options = {
-tooltips: {
-        callbacks: {
-            label: function(tooltipItem) {
-                return likesName;
-            }
-        }
-    },
-        title: {
-                  display: true,
-                  text: 'User',
-                  position: 'bottom'
-              },
-        scales: {
-            yAxes: [{
-                ticks: {
-                    beginAtZero:true
-                }
-            }]
-        }
-};
+
+
 
 /////////////end young
 
